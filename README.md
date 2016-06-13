@@ -8,5 +8,3 @@ It includes css, js and image minifiers, some postcss plugins to start with (los
 
 Enter your directory and just type npm install and your boilerplate will build.
 
-.. image:: https://travis-ci.org/ajvanho6/sass-postcss-boilerplate.svg?branch=master
-    :target: https://travis-ci.org/ajvanho6/sass-postcss-boilerplate

@@ -7,3 +7,6 @@ This simple boilerplate contains some of basic gulp tasks which will speed up yo
 It includes css, js and image minifiers, some postcss plugins to start with (lost grid, rucksack), and live browser syncing which reloads page automatically every time you change your code.
 
 Enter your directory and just type npm install and your boilerplate will build.
+
+.. image:: https://travis-ci.org/ajvanho6/sass-postcss-boilerplate.svg?branch=master
+    :target: https://travis-ci.org/ajvanho6/sass-postcss-boilerplate

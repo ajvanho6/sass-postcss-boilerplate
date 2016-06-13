@@ -1,10 +1,8 @@
-# Travis CI Status [![Build Status](https://travis-ci.org/ajvanho6/sass-postcss-boilerplate.svg?branch=master)](https://travis-ci.org/ajvanho6/sass-postcss-boilerplate)
-
-# sass-postcss-boilerplate
+# sass-postcss-boilerplate [![Build Status](https://travis-ci.org/ajvanho6/sass-postcss-boilerplate.svg?branch=master)](https://travis-ci.org/ajvanho6/sass-postcss-boilerplate)
 
 Simple front end boilerplate
 
-This simple boilerplate contains some of basic gulp tasks which will speed up your workflow. 
+This boilerplate contains some of basic gulp tasks which will speed up your workflow. 
 
 It includes css, js and image minifiers, some postcss plugins to start with (lost grid, rucksack), and live browser syncing which reloads page automatically every time you change your code.
 

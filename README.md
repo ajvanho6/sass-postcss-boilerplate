@@ -1,4 +1,5 @@
 # sass-postcss-boilerplate
+https://travis-ci.org/ajvanho6/sass-postcss-boilerplate.svg?branch=master
 Simple front end boilerplate
 
 This simple boilerplate contains some of basic gulp tasks which will speed up your workflow. 

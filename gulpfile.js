@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     rucksack = require('rucksack-css'),
     lost = require('lost');
 
-
+//CSS task
 gulp.task('css', function () {
     var processors = [
       lost,
@@ -27,7 +27,7 @@ gulp.task('css', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-
+//JS task
 gulp.task('js',function(){
   gulp.src('src/js/scripts.js')
     .pipe(jshint('.jshintrc'))
@@ -39,6 +39,7 @@ gulp.task('js',function(){
     .pipe(browserSync.reload({stream:true, once: true}));
 });
 
+//RELOAD task
 gulp.task('browser-sync', function() {
     browserSync.init(null, {
         server: {
@@ -46,16 +47,19 @@ gulp.task('browser-sync', function() {
         }
     });
 });
+
 gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
+//IMAGE MINIFY task
 gulp.task('imagemin', function() {
   return gulp.src('src/img/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('app/assets/img'));
 });
 
+//DEFAULT task
 gulp.task('default', ['css', 'js', 'browser-sync','imagemin'], function () {
     gulp.watch("src/scss/*/*.scss", ['css']);
     gulp.watch("src/js/*.js", ['js']);

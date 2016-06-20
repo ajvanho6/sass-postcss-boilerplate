@@ -8,13 +8,25 @@ var gulp = require('gulp'),
     minifyCSS = require('gulp-minify-css'),
     postcss = require('gulp-postcss'),
     rucksack = require('rucksack-css'),
+    pxtorem = require('postcss-pxtorem'),
+    vr = require('postcss-vertical-rhythm'),
     lost = require('lost');
 
 //CSS task
 gulp.task('css', function () {
     var processors = [
       lost,
-      rucksack({fallbacks:true,autoprefixer:true})
+      rucksack({fallbacks:true,autoprefixer:true}),
+      pxtorem({
+        rootValue: 16,
+        unitPrecision: 5,
+        propWhiteList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+        selectorBlackList: [],
+        replace: true,
+        mediaQuery: false,
+        minPixelValue: 0
+      }),
+      vr
     ];
 
     return gulp.src('src/scss/style.scss')

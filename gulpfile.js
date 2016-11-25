@@ -12,8 +12,7 @@ var gulp = require('gulp'),
     vr = require('postcss-vertical-rhythm'),
     lost = require('lost'),
     svgSprite = require("gulp-svg-sprites"),
-    filter = require('gulp-filter'),
-    svg2png = require('gulp-svg2png');
+    filter = require('gulp-filter');
 
 
 //CSS task
@@ -81,10 +80,7 @@ gulp.task('sprites', function () {
         .pipe(svgSprite({
             common:"svg-sprite"
         }))
-        .pipe(gulp.dest("app/assets/svg"))
-        .pipe(filter("**/*.svg"))  // Filter out everything except the SVG file
-        .pipe(svg2png())           
-        .pipe(gulp.dest("app/assets/pngfallback"));
+        .pipe(gulp.dest("app/assets/svg"));
 });
 
 //DEFAULT task

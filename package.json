@@ -20,7 +20,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.1",
     "gulp-svg-sprites": "^4.0.2",
-    "gulp-svg2png": "^2.0.2",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.8.0",
     "lost": "^7.1.1",

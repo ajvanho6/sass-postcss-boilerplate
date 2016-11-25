@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     rename = require('gulp-rename'),
     imagemin   = require('gulp-imagemin'),
-    minifyCSS = require('gulp-minify-css'),
+    cleanCSS = require('gulp-clean-css'),
     postcss = require('gulp-postcss'),
     rucksack = require('rucksack-css'),
     pxtorem = require('postcss-pxtorem'),
@@ -33,7 +33,7 @@ gulp.task('css', function () {
     .pipe(sass({errLogToConsole: true}))
     .pipe(postcss(processors))
     .pipe(gulp.dest('app/assets/css'))
-    .pipe(minifyCSS())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('app/assets/css'))
     .pipe(browserSync.reload({stream:true}));

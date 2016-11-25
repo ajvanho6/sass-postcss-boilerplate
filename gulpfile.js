@@ -10,7 +10,11 @@ var gulp = require('gulp'),
     rucksack = require('rucksack-css'),
     pxtorem = require('postcss-pxtorem'),
     vr = require('postcss-vertical-rhythm'),
-    lost = require('lost');
+    lost = require('lost'),
+    svgSprite = require("gulp-svg-sprites"),
+    filter = require('gulp-filter'),
+    svg2png = require('gulp-svg2png');
+
 
 //CSS task
 gulp.task('css', function () {
@@ -71,8 +75,20 @@ gulp.task('imagemin', function() {
     .pipe(gulp.dest('app/assets/img'));
 });
 
+//SVG SPRITE TASK WITH PNG FALLBACK
+gulp.task('sprites', function () {
+    return gulp.src('src/svg/*.svg')
+        .pipe(svgSprite({
+            common:"svg-sprite"
+        }))
+        .pipe(gulp.dest("app/assets/svg"))
+        .pipe(filter("**/*.svg"))  // Filter out everything except the SVG file
+        .pipe(svg2png())           
+        .pipe(gulp.dest("app/assets/pngfallback"));
+});
+
 //DEFAULT task
-gulp.task('default', ['css', 'js', 'browser-sync','imagemin'], function () {
+gulp.task('default', ['css', 'js', 'browser-sync','imagemin', 'sprites'], function () {
     gulp.watch("src/scss/*/*.scss", ['css']);
     gulp.watch("src/js/*.js", ['js']);
     gulp.watch("app/*.html", ['bs-reload']);
